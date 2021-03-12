@@ -22,9 +22,8 @@ Tuldok::Hash::HashBase::!HashBase()
     delete _hasher;
 }
 
-Tuldok::Hash::HashBase::HashBase(CryptoPP::HashTransformation* hasher)
+Tuldok::Hash::HashBase::HashBase(CryptoPP::HashTransformation* hasher) : _hasher(hasher)
 {
-    _hasher = hasher;
 }
 
 void Tuldok::Hash::HashBase::Initialize()
@@ -34,7 +33,7 @@ void Tuldok::Hash::HashBase::Initialize()
 
 Tuldok::Hash::HashBase::~HashBase()
 {
-    this->~HashBase();
+    this->!HashBase();
 }
 
 int Tuldok::Hash::HashBase::HashSize::get()
