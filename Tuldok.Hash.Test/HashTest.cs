@@ -133,5 +133,65 @@ namespace Tuldok.Hash.Test
 
             Assert.AreEqual(sha3_512str, "b751850b1a57168a5693cd924b6b096e08f621827444f70d884f5d0240d2712e10e116e9192af3c91a7ec57647e3934057340b4cf408d5a56592f8274eec53f0");
         }
+
+        [TestMethod]
+        public void TestBlake2s()
+        {
+            var blake2 = new Blake2s();
+            var bytes = Encoding.UTF8.GetBytes("abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789");
+            var hash = blake2.ComputeHash(bytes);
+            var hashStr = BitConverter.ToString(hash).Replace("-", "");
+            Assert.AreEqual(hashStr, "44DDDB39BDB2AF80C147894C1D756ADA3D1C2AC2B100541E04FE87B4A59E1243");
+        }
+
+        [TestMethod]
+        public void TestBlake2b()
+        {
+            var blake2 = new Blake2b();
+            var bytes = Encoding.UTF8.GetBytes("abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789abcdefghijklmnopqrstuvwxyz0123456789");
+            var hash = blake2.ComputeHash(bytes);
+            var hashStr = BitConverter.ToString(hash).Replace("-", "");
+            Assert.AreEqual(hashStr, "FFD4A61F80D55FFA83BA8D2BD62DCFC33148ADE507A8F7F85A5AF2C619E126FF11E9284F12BF3EE6A2B5CBC711FA84C37DA343AB7D29BCDF722DF0171E41297A");
+        }
+
+        [TestMethod]
+        public void TestKeccak_256()
+        {
+            var keccak_256 = new Keccak_256();
+            var bytes = Encoding.UTF8.GetBytes("The quick brown fox jumps over the lazy dog");
+            var hash = keccak_256.ComputeHash(bytes);
+            var hashStr = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            Assert.AreEqual(hashStr, "4d741b6f1eb29cb2a9b9911c82f56fa8d73b04959d3d9d222895df6c0b28aa15");
+        }
+
+        [TestMethod]
+        public void TestKeccak_224()
+        {
+            var keccak_224 = new Keccak_224();
+            var bytes = Encoding.UTF8.GetBytes("The quick brown fox jumps over the lazy dog");
+            var hash = keccak_224.ComputeHash(bytes);
+            var hashStr = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            Assert.AreEqual(hashStr, "310aee6b30c47350576ac2873fa89fd190cdc488442f3ef654cf23fe");
+        }
+
+        [TestMethod]
+        public void TestKeccak_384()
+        {
+            var keccak_384 = new Keccak_384();
+            var bytes = Encoding.UTF8.GetBytes("The quick brown fox jumps over the lazy dog");
+            var hash = keccak_384.ComputeHash(bytes);
+            var hashStr = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            Assert.AreEqual(hashStr, "283990fa9d5fb731d786c5bbee94ea4db4910f18c62c03d173fc0a5e494422e8a0b3da7574dae7fa0baf005e504063b3");
+        }
+
+        [TestMethod]
+        public void TestKeccak_512()
+        {
+            var keccak_512 = new Keccak_512();
+            var bytes = Encoding.UTF8.GetBytes("The quick brown fox jumps over the lazy dog");
+            var hash = keccak_512.ComputeHash(bytes);
+            var hashStr = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            Assert.AreEqual(hashStr, "d135bb84d0439dbac432247ee573a23ea7d3c9deb2a968eb31d47c4fb45f1ef4422d6c531b5b9bd6f449ebcc449ea94d0a8f05f62130fda612da53c79659f609");
+        }
     }
 }

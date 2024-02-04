@@ -12,5 +12,7 @@
 #include <cryptopp/crc.h>
 #include <cryptopp/sha.h>
 #include <cryptopp/sha3.h>
+#include <cryptopp/blake2.h>
+#include <cryptopp/keccak.h>
 
 #endif //PCH_H

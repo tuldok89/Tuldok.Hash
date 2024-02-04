@@ -57,6 +57,24 @@
     <ClInclude Include="Sha3_512.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Blake2s.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Blake2b.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Keccak_224.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Keccak_256.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Keccak_384.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Keccak_512.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp">
@@ -99,6 +117,24 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Sha3_512.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Blake2s.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Blake2b.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Keccak_224.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Keccak_256.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Keccak_384.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Keccak_512.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
